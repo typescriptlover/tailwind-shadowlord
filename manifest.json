@@ -1,0 +1,12 @@
+{
+   "manifest_version": 2,
+   "name": "tailwind-shadowlord",
+   "description": "Adds a tailwind converter to shadowlord",
+   "version": "1.0.0",
+   "content_scripts": [
+      {
+         "matches": ["https://noeldelgado.github.io/shadowlord/*"],
+         "js": ["tailwind.js"]
+      }
+   ]
+}
