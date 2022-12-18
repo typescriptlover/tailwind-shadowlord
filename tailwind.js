@@ -53,11 +53,13 @@ function handler() {
    }
 
    navigator.clipboard.writeText(
-      JSON.stringify(
-         Object.fromEntries(
-            out.map((hex, hexIndex) => ['bg-brand-' + (hexIndex + 1) * 50, hex])
-         )
-      )
+      JSON.stringify({
+         brand: {
+            ...Object.fromEntries(
+               out.map((hex, hexIndex) => [(hexIndex + 1) * 50, hex])
+            ),
+         },
+      })
    );
    const copied = document.createElement('div');
    addStyles(copied, {
